@@ -1,0 +1,142 @@
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="pag.css"  type="text/css">
+    </head>
+    <body>
+       <div class="cabecera"> 
+        <div class="logo">
+            <img src="informatica.png" width="50" > </div>
+           <div class="practica"><p><center>Practica NRO 1</center></p></div>
+       <div class="nom"><p><center>Univ. HUanacuni Mamani Dania Mishel </center></p></div>       </div> 
+       <div class="cuerpo">
+            <h1>Calculadora Completa</h1>
+            <h2>Operaciones Básicas</h2>
+            <label for="num1">Número 1:</label>
+            <input type="number" id="num1" required onkeydown="checkEnter(event, 'sum')">
+            <label for="num2">Número 2:</label>
+            <input type="number" id="num2" required onkeydown="checkEnter(event, 'sum')">
+            
+            <button onclick="calculate('sum')">+</button>
+            <button onclick="calculate('subtract')">-</button>
+            <button onclick="calculate('multiply')">×</button>
+            <button onclick="calculate('divide')">÷</button>
+        
+            <h2>Factorial</h2>
+            <label for="factorialInput">Ingresa un número:</label>
+            <input type="number" id="factorialInput" min="0" required onkeydown="checkEnter(event, 'factorial')">
+            <button onclick="calculateFactorial()">!</button>
+        
+            <h2>Potencia</h2>
+            <label for="baseInput">Base:</label>
+            <input type="number" id="baseInput" required onkeydown="checkEnter(event, 'power')">
+            <label for="exponentInput">Exponente:</label>
+            <input type="number" id="exponentInput" required onkeydown="checkEnter(event, 'power')">
+            <button onclick="calculatePower()">^</button>
+        
+            <h2>Resultados:</h2>
+            <p id="result"></p>
+            <div id="errorForm" class="error">
+                <strong>Error:</strong> <span id="errorMessage"></span>
+            </div>
+        
+            <script>
+                function showError(message) {
+                    var errorMessageElement = document.getElementById('errorMessage');
+                    errorMessageElement.innerText = message;
+                    document.getElementById('errorForm').style.display = 'block'; 
+                }
+        
+                function hideError() {
+                    document.getElementById('errorForm').style.display = 'none'; 
+                }
+        
+                function checkEnter(event, operation) {
+                    if (event.key === 'Enter') {
+                        if (operation === 'sum' || operation === 'subtract' || operation === 'multiply' || operation === 'divide') {
+                            calculate(operation);
+                        } else if (operation === 'factorial') {
+                            calculateFactorial();
+                        } else if (operation === 'power') {
+                            calculatePower();
+                        }
+                        event.preventDefault();
+                    }
+                }
+        
+                function calculate(operation) {
+                    hideError(); 
+                    var num1 = parseFloat(document.getElementById('num1').value);
+                    var num2 = parseFloat(document.getElementById('num2').value);
+                    var result;
+                    if (isNaN(num1) || isNaN(num2)) {
+                        showError('Por favor, ingresa números válidos.');
+                        return;
+                    }
+                    if (operation === 'sum') {
+                        result = num1 + num2; 
+                    } else if (operation === 'subtract') {
+                        result = num1 - num2;
+                    } else if (operation === 'multiply') {
+                        result = num1 * num2; 
+                    } else if (operation === 'divide') {
+                        if (num2 === 0) {
+                            showError('Error: División por cero.');
+                            return;
+                        } else {
+                            result = num1 / num2;
+                        }
+                    }
+                    document.getElementById('result').innerText = 'Resultado: ' + result.toFixed(0);
+                }
+        
+                function calculateFactorial() {
+                    hideError(); 
+                    var num = parseInt(document.getElementById('factorialInput').value);
+                    if (isNaN(num) || num < 0) {
+                        showError('El factorial no está definido para números negativos o entradas no válidas.');
+                        return;
+                    }
+        
+                    var factorial = 1; 
+                    for (var i = 1; i <= num; i++) {
+                        factorial *= i; 
+                    }
+        
+                    document.getElementById('result').innerText = 'Factorial de ' + num + ' es ' + factorial;
+                }
+                function calculatePower() {
+                    hideError(); 
+                    var base = parseFloat(document.getElementById('baseInput').value);
+                    var exponent = parseInt(document.getElementById('exponentInput').value);
+                    if (isNaN(base) || isNaN(exponent)) {
+                        showError('Por favor, ingresa números válidos para base y exponente.');
+                        return;
+                    }
+        
+                    var power = 1; 
+                    for (var i = 0; i < exponent; i++) {
+                        power *= base; 
+                    }
+        
+                    document.getElementById('result').innerText = base + ' elevado a la ' + exponent + ' es ' + power.toFixed(0);
+                }
+            </script>
+        
+</div>
+       <div class="izquierda"> <center>
+        <b>Menu</b><br/>
+        <a href="preg1.html" class="e">serie factorial</a><br/>
+        <a href="preg2.html" class="e">Primos</a><br/>
+        <a href="preg3.html"  class="e">Calculadora</a><br/>
+        <a href="preg4.html" class="e" >Palindromo</a><br/>
+        <a href="preg5.html" class="e">Rotar derecha</a><br/>
+        <a href="preg6.html" class="e">optativa</a><br/>
+        <a href="index.html" class="e">Principal</a><br/>
+       </div> 
+      
+       <div class="pie">
+            <img class="im1" src="gatokawaii.jpg" widht="100%">
+    </div>
+    </body>
+</html>

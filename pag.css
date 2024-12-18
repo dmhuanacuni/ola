@@ -1,0 +1,128 @@
+div.cabecera{
+    position:absolute;
+    top:10px;
+    left:1%;
+    width: 100%;
+    height: 150px;
+    font-size: 30;
+    background-color: rgb(190, 179, 163);
+    }
+    div.practica{
+        font-size: 30;
+        font-family: Love;
+
+    }
+
+    div.nom{
+        font-size: 20;
+        font-family: CopyDuck;
+    }
+    div.izquierda{
+        position:absolute;
+    top:160px;
+    left:1%;
+    width: 35%;
+    height: 100%;
+    font-family: CopyDuck;
+    background-color: #e7c1c1;
+    }
+    div.cuerpo{
+       
+     position:absolute;
+    top:160px;
+        left:36%;
+        width: 65%;
+        height: 100%;
+        font-family: CopyDuck;
+        background-color: rgb(157, 190, 183);
+    }
+   
+    div.pie{
+        position:absolute;
+        top:700px;
+        left:1%;
+        width: 100%;
+        height: 20%;
+        font-family: CopyDuck;
+        background-color: rgb(146, 128, 160);
+        border: 5;
+    }
+    div.pie img{
+        width: 100%;
+        height: 130px;
+    }
+    a:link{
+        height: 0px;
+        width: inherit;
+        color: #8a6e63;
+    }
+    a:visited{
+        color:brown
+    }
+    a:hover{
+        font-family: Comic-Sans;
+        color:cornflowerblue
+    }
+    a.e{
+        font-family: Choco Shake;
+        font-size: 35;
+    }
+    div.logo{
+        position: absolute;
+        width: 5%;
+        height: 5%;
+        top: 5px;
+    }
+    .error {
+        color: red;
+        border: 1px solid red;
+        padding: 10px;
+        margin-top: 10px;
+        display: none; /* Oculta el formulario de error inicialmente */
+    }
+    input {
+        margin-right: 10px;
+        width: 70px;
+        padding: 5px;
+    }
+    button {
+        margin-top: 10px;
+        margin-right: 5px;
+        padding: 5px 10px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    #result {
+        font-weight: bold;
+        margin-top: 10px;
+        color: #007BFF;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    p.bi{
+        top: 80px;
+        left: 2%;
+        position: absolute;
+        font-size: 70;
+        font-family: Choco Shake;
+    }
+    div.cuerpo img{
+        position: absolute;
+        width: 100%;
+        height: 530px;
+    }

@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="pag.css"  type="text/css">
+    </head>
+    <body>
+       <div class="cabecera"> 
+        <div class="logo">
+            <img src="informatica.png" width="50" > </div>
+           <div class="practica"><p><center>Practica NRO 1</center></p></div>
+       <div class="nom"><p><center>Univ. HUanacuni Mamani Dania Mishel </center></p></div>       </div> 
+       <div class="cuerpo">
+        <h1>Generador de Números Factoriales</h1>
+        <label for="t">Número de términos:</label>
+        <input type="number" id="t" min="0">
+        <button onclick="g()">Generar</button>
+        
+        <h2>Serie Generada:</h2>
+        <p id="r"></p>
+        <h2>Suma de Factoriales:</h2>
+        <p id="s"></p>
+        
+        <script>
+            function g() {
+              
+                var n = parseInt(document.getElementById('t').value);
+                var res = '';
+                var sum = 0;
+                var g=0;
+              
+                for (var i = 0; i < n; i++) {
+                    var f = c(i);
+                    res += g + '!'+'<br>';
+                    g=g+2;
+                    sum += f; 
+                }
+        
+                
+                document.getElementById('r').innerHTML = res;
+            }
+        
+            function c(x) {
+                
+                var p = 1;
+        
+                if (x === 0 || x === 1) {
+                    return 1;
+                }
+                for (var j = 2; j <= x; j++) {
+                    p *= j; 
+                }
+                return p;
+            }
+        </script>
+    </div>
+       <div class="izquierda"> <center>
+        <b>Menu</b><br/>
+        <a href="preg1.html" class="e">serie factorial</a><br/>
+        <a href="preg2.html" class="e">Primos</a><br/>
+        <a href="preg3.html"  class="e">Calculadora</a><br/>
+        <a href="preg4.html" class="e" >Palindromo</a><br/>
+        <a href="preg5.html" class="e">Rotar derecha</a><br/>
+        <a href="preg6.html" class="e">optativa</a><br/>
+        <a href="index.html" class="e">Principal</a><br/>
+       </div> 
+      
+       <div class="pie">
+            <img class="im1" src="gatokawaii.jpg" widht="100%">
+    </div>
+    </body>
+</html>
